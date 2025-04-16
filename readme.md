@@ -16,7 +16,7 @@ A beautiful, interactive web application that helps users calculate and visualiz
 
 ## Demo
 
-Check out the live demo [here](#) (add your deployment link when available)
+Check out the live demo [here](https://finance-hub-nine.vercel.app/)
 
 ## Technical Details
 
