@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinanceHub - Home Loan EMI Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-home"></i> Home Loan EMI Calculator</h1>
+    </div>
+    
+    <!-- main content section -->
+    <div class="calculator">
+      <!--left part for input sliders-->
+      <div class="left">
+        <div class="input-group">
+          <label for="loanAmount"><i class="fas fa-money-bill-wave"></i> Loan Amount</label>
+          <input type="range" id="loanAmount" min="100000" max="100000000" value="2500000" step="50000" oninput="updateLoanAmount(this.value)">
+          <div class="input-value">
+            <span>₹</span>
+            <span id="loanAmountDisplay" class="value-display">25,00,000</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="tenure"><i class="fas fa-calendar-alt"></i> Tenure (Years)</label>
+          <input type="range" id="tenure" min="1" max="30" value="30" step="1" oninput="updateTenure(this.value)">
+          <div class="input-value">
+            <span id="tenureDisplay" class="value-display">30</span>
+            <span>Years</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="interestRate"><i class="fas fa-percentage"></i> Interest Rate (%P.A.)</label>
+          <input type="range" id="interestRate" min="0.5" max="15" value="8.75" step="0.25" oninput="updateInterestRate(this.value)">
+          <div class="input-value">
+            <span id="interestRateDisplay" class="value-display">8.75</span>
+            <span>%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- right part for EMI display-->
+      <div class="right">
+        <h2>Monthly Home Loan EMI</h2>
+        <div class="emi-amount">₹ <span id="emi">19,668</span></div>
+        
+        <!-- Optional: Add a chart visualization -->
+        <div class="chart-container">
+          <div class="chart-circle">
+            <div class="chart-inner">
+              <div id="chart-percent">70%</div>
+            </div>
+          </div>
+        </div>
+        
+        <a href="#" class="details-link" id="detailsToggle"><i class="fas fa-info-circle"></i> View Details</a>
+        <div class="details" id="detailsSection">
+          <p>Principal Amount: <span id="principal">₹ 25,00,000</span></p>
+          <p>Interest Amount: <span id="totalInterest">₹ 45,80,304</span></p>
+          <p>Total Amount Payable: <span id="totalAmount">₹ 70,80,304</span></p>
+        </div>
+        <button class="talk-to-expert"><i class="fas fa-headset"></i> Talk To Our Loan Expert</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
